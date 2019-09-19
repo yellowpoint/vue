@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Document</title>
+</head>
+
+<body>
+
+	<div id="app">
+		<!-- <p>fsafas{{msg}}++{{msg}}</p> -->
+		<p>fsafas{{msg}}</p>
+		<div v-text="msg"></div>
+		<div v-html="tag"></div>
+
+		<p>{{car.brand}}</p>
+		<div v-text="car.color"></div>
+		<input type="text" v-model="car.color">
+		<button v-on:click="clickFn">点我</button>
+	</div>
+
+	<script src="./src/watcher.js"></script>
+	<script src="./src/observer.js"></script>
+	<script src="./src/compiler.js"></script>
+	<script src="./src/vue.js"></script>
+
+	<script>
+		const vm = new Vue({
+			el: '#app',
+			data: {
+				msg: 'hahah',
+				tag: '<h3>哎哟 不错</h3>',
+				car: {
+					brand: '特斯拉',
+					color: 'red'
+				},
+				// $data:"我是data"
+
+			},
+			methods: {
+				clickFn() {
+					this.$data.msg ="点击了"
+				}
+			}
+		})
+		// console.log(vm)
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+@charset "UTF-8";
+html,body,div,header,main,article,footer,section,aside,nav,hgroup,ul,li,h1,h2,h3,h4,dl,dt,dd,p,a,span,i,em,img,input,textarea{margin:0;padding:0}
+header,main,article,footer,section,aside,nav{display:block}
+html,body{font-family:"Microsoft yahei",Helvetica,Arial,sans-serif;font-size: .26rem;}
+h1,h2,h3,h4,h5,b{font-weight:normal}
+a,img,input{border:none 0;text-decoration:none;outline:none}
+a:hover{text-decoration:none}
+a:focus,input:focus{outline:0 none}
+li{list-style:none}
+i,em,cite{font-style:normal}
+a{text-decoration:none;outline:none;-webkit-tap-highlight-color:rgba(0,0,0,0)}
+span{-webkit-tap-highlight-color:rgba(0,0,0,0)}
+input,textarea,li{-webkit-tap-highlight-color:rgba(0,0,0,0)}
+textarea{resize:none;font-size:12px;outline:none 0;border:none 0}
+textarea,input,button{-webkit-appearance:none;outline: none 0;border:none 0;}
+input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{color:#ddd;font-size:12px}
+img{display: block;width: 100%}
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}.clearfix{*+height:1%;}
+html{font-size: 50px}
+
+/*取消滚动条*/
+::-webkit-scrollbar {  display: none;  }
+
+img{ pointer-events: none; }/*禁止图片长按选中*/
+
+html,body{
+    height:100%;
+    -moz-user-select:none;-webkit-user-select:none; /*禁止文字选中*/
+    -webkit-overflow-scrolling: touch;              /*滚动顺滑*/
+    -webkit-tap-highlight-color: rgba(0,0,0,0);     /*a取消ios上链接长按出现的半透明黑色遮罩*/
+    background: #f5f5f5;
+}
+/*超出文字显示省略号*/
+.overflowEllipsis{overflow: hidden;white-space: nowrap; text-overflow: ellipsis;}
+/*强制断句*/
+.wordBreakAll{word-wrap:break-word;word-break:break-all;}
+
+
+
+/*加载提示符*/
+.infinite-scroll-preloader{
+    width: 18px;
+    height:48px;
+    overflow: hidden;
+    margin: 10px auto 0;
+    background: url("http://file.diy.51app.cn/wp/icoImg/loading.gif") no-repeat;
+    background-size: 100%;
+}
+/*到底了提示开始*/
+
+.lastTips{
+    width: 100%;
+    text-align: center;
+    margin: 10px 0 0;
+    padding-bottom: 35px;
+    color: #a7a5a5;
+    font-size: .28rem;
+}
+.lastTips i {
+    display: inline-block;
+    margin:0 5px 5px;
+    width: 2rem;
+    height: 1px;
+}
+.lastTips .left-line {
+    background: linear-gradient(to right, #d9d9d9, #f0f0f0);
+    background: -webkit-linear-gradient(right, #d9d9d9, #f0f0f0);
+}
+.lastTips .right-line {
+    background: linear-gradient(to left, #d9d9d9, #f0f0f0);
+    background: -webkit-linear-gradient(left, #d9d9d9, #f0f0f0);
+}
+/*到底了提示结束*/
+
+
+

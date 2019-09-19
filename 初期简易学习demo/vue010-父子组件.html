@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta content="telephone=no,email=no" name="format-detection">
+		<meta name="App-Config" content="fullscreen=yes,useHistoryState=yes,transition=yes">
+		<title></title>
+		<style type="text/css">
+
+		</style>
+	</head>
+
+	<body>
+		<div id="app">
+			<parent-component>
+
+			</parent-component>
+			<child-component>
+			</child-component>
+		</div>
+		<div id="app2">
+			<my-component></my-component>
+			<my-component2></my-component2>
+		</div>
+	
+		<div id="app3">
+			<app3-compont :app3-name='name' :app3-age='age'></app3-compont>
+		</div>
+
+
+
+		<script type="text/x-template" id="myComponent">
+			<div>This is a component!</div>
+		</script>
+		
+		<template id="myComponent2">
+            <div>This is a component!2222</div>
+        </template>
+        
+        <template id="app3Compont">
+            <div>
+            	我的名字是 {{app3Name}},年龄 {{app3Age}}
+            </div>
+
+        </template>
+        
+        
+
+		<script src="js/vue-2.0.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/vue-resource.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var Child = {
+				template: '<div>我是一个小小的模版t1</div>'
+			}
+			var Parent = {
+				template: '<div>我是小小模版t1的爹<child-component></child-component></div>',
+				components: {
+					'child-component': Child
+				}
+			}
+			Vue.component('parent-component', Parent)
+			Vue.component('child-component', Child)
+			new Vue({
+				el: '#app'
+			})
+
+			Vue.component('my-component', {
+				template: '#myComponent'
+			})
+			Vue.component('my-component2', {
+				template: '#myComponent2'
+			})
+			new Vue({
+				el: '#app2'
+
+			})
+			new Vue({
+				el: '#app3',
+				data:{
+					name:'yellowpoint',
+					age:24
+				},
+				components:{
+					'app3-compont':{
+						template:'#app3Compont',
+						props:['app3Name','app3Age']
+					}
+				}
+
+			})
+		</script>
+
+	</body>
+
+</html>

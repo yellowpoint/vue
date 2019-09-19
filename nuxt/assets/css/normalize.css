@@ -1,0 +1,19 @@
+body{
+  color:yellowgreen !important;
+}
+
+.page-enter-active, .page-leave-active {
+  transition: opacity .5s;
+}
+.page-enter, .page-leave-active {
+  opacity: 0;
+}
+
+.test-enter-active, .test-leave-active {
+  transition: all .5s;
+  font-size: 20px;
+}
+.test-enter, .test-leave-active {
+  opacity: 0;
+  font-size: 24px;
+}

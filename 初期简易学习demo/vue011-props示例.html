@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta content="telephone=no,email=no" name="format-detection">
+		<meta name="App-Config" content="fullscreen=yes,useHistoryState=yes,transition=yes">
+		<title></title>
+		<style type="text/css">
+
+		</style>
+	</head>
+
+	<body>
+
+		<!--<div id="app">
+
+			<div>
+				<h1>父组件</h1>
+				name:{{name}}   <input type="text" v-model="name" />
+				<br />
+				age:{{age}}   <input type="text" v-model="age" />
+			</div>
+
+			<my-component v-bind:my-name="name" v-bind:my-age="age"></my-component>
+		</div>
+
+		<template id="myComponent">
+			<div>
+				<h1>子组件</h1>
+				name:{{myName}}   <input type="text" v-model="myName" />
+				<br />
+				age:{{myAge}}   <input type="text" v-model="myAge" />
+			</div>
+		</template>-->
+
+		<div id="app">
+
+			<table>
+				<tr>
+					<th colspan="3">父组件数据</td>
+				</tr>
+				<tr>
+					<td>name</td>
+					<td>{{ name }}</td>
+					<td><input type="text" v-model="name" /></td>
+				</tr>
+				<tr>
+					<td>age</td>
+					<td>{{ age }}</td>
+					<td><input type="text" v-model="age" /></td>
+				</tr>
+			</table>
+
+			<my-component :my-name="name" :my-age="age"></my-component>
+		</div>
+
+		<template id="myComponent">
+			<table>
+				<tr>
+					<th colspan="3">子组件数据</td>
+				</tr>
+				<tr>
+					<td>my name</td>
+					<td>{{ myName }}</td>
+					<td><input type="text" v-model="myName" /></td>
+				</tr>
+				<tr>
+					<td>my age</td>
+					<td>{{ myAge }}</td>
+					<td><input type="text" v-model="myAge" /></td>
+				</tr>
+			</table>
+		</template>
+
+		<script src="js/vue-2.0.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/vue-resource.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var vm = new Vue({
+				el: '#app',
+				data: {
+					name: 'keepfool',
+					age: 28
+				},
+				components: {
+					'my-component': {
+						template: '#myComponent',
+						props: ['myName', 'myAge'],
+						data: function() {
+							return {
+								myName2: '111',
+								myAge2: 28
+							}
+						}
+					}
+				}
+			})
+		</script>
+
+	</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta content="telephone=no,email=no" name="format-detection">
+		<meta name="App-Config" content="fullscreen=yes,useHistoryState=yes,transition=yes">
+		<title></title>
+		<style type="text/css">
+
+		</style>
+	</head>
+
+	<body>
+		<div id="app">
+			<div id="searchBar">
+				Search <input type="text" v-model="searchQuery" /> sss{{searchQuery}}
+			</div>
+			<simple-grid :data="gridData" :columns="gridColumns" :filter-key="searchQuery">
+			</simple-grid>
+		</div>
+
+		<template id="grid-template">
+
+			<div>
+				<!--aaa{{filterKey}}-->
+				<div v-for="col in columns">
+					{{col[0].toUpperCase() + col.slice(1)}}
+				</div>
+				<div>
+					<div v-for="entry in filteredEntry">
+						<div v-for="col in columns">
+							{{entry[col]}}
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</template>
+
+		<script src="js/vue-2.0.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/vue-resource.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			Vue.component('simple-grid', {
+				template: '#grid-template',
+				props: {
+					data: Array,
+					columns: Array,
+					filterKey: String
+				},
+				computed: {
+					filteredEntry: function() {
+						var _data = [];
+						var self = this;
+						self.data.forEach(function(v,i){
+							console.log(typeof v.age)
+							if(v.age.toString().indexOf(self.filterKey) !== -1){
+								_data.push(v);
+							}
+						})
+						return _data;
+						
+					}
+				}
+			})
+
+			var demo = new Vue({
+				el: '#app',
+				data: {
+					searchQuery: '',
+					gridColumns: ['name', 'age', 'sex'],
+					gridData: [{
+						name: 'Jack',
+						age: 30,
+						sex: 'Male'
+					}, {
+						name: 'Bill',
+						age: 26,
+						sex: 'Male'
+					}, {
+						name: 'Tracy',
+						age: 22,
+						sex: 'Female'
+					}, {
+						name: 'Chris',
+						age: 36,
+						sex: 'Male'
+					}]
+				}
+
+			})
+		</script>
+	</body>
+
+</html>

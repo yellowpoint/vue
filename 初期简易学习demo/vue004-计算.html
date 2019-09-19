@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta content="telephone=no,email=no" name="format-detection">
+		<meta name="App-Config" content="fullscreen=yes,useHistoryState=yes,transition=yes">
+		<title></title>
+		<style type="text/css">
+
+		</style>
+	</head>
+
+	<body>
+		<div id="example">
+			<p>Original message: "{{ message }}"</p>
+			<p>Computed reversed message: "{{ now }}"</p>
+			<p>{{add}}</p>
+			<p>
+				Ask a yes/no question:
+				<input v-model="question">
+			</p>
+			<p>{{ answer2 }}</p>
+		</div>
+
+		<script src="js/vue-2.0.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/vue-resource.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var vm = new Vue({
+				el: '#example',
+				data: {
+					message: 'Hello',
+					num: '12312',
+					question: '',
+					answer: 'I cannot give you an answer until you ask a question!'
+				},
+				computed: {
+					// a computed getter
+					reversedMessage: function() {
+						// `this` points to the vm instance
+						return this.message.split('').reverse().join('')
+					},
+					now: function() {
+						return this.message + Date.now()
+					},
+					add: function() {
+						var num = 0;
+
+						this.num.split('').forEach(
+							function addNumber(value) {
+								num += Number(value);
+							}
+						)
+
+						return num;
+					},
+					answer2: function() {
+						
+						
+						this.answer = 'Waiting for you to stop typing...'
+//						this.getAnswer()
+						return 'Waiting for you to stop typing...'
+						
+					}
+
+				}
+			})
+		</script>
+
+	</body>
+
+</html>

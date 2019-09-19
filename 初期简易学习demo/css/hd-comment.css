@@ -1,0 +1,236 @@
+@charset "UTF-8";
+html,body,div,header,main,article,footer,section,aside,nav,hgroup,ul,li,h1,h2,h3,h4,dl,dt,dd,p,a,span,i,em,img,input,textarea{margin:0;padding:0}
+header,main,article,footer,section,aside,nav{display:block}
+html,body{font-family:"Microsoft yahei",Helvetica,Arial,sans-serif;font-size: .26rem;}
+h1,h2,h3,h4,h5,b{font-weight:normal}
+a,img,input{border:none 0;text-decoration:none;outline:none}
+a:hover{text-decoration:none}
+a:focus,input:focus{outline:0 none}
+li{list-style:none}
+i,em,cite{font-style:normal}
+a{text-decoration:none;outline:none;-webkit-tap-highlight-color:rgba(0,0,0,0)}
+span{-webkit-tap-highlight-color:rgba(0,0,0,0)}
+input,textarea,li{-webkit-tap-highlight-color:rgba(0,0,0,0)}
+textarea{resize:none;font-size:12px;outline:none 0;border:none 0}
+textarea,input,button{-webkit-appearance:none;outline: none 0;border:none 0;}
+input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{color:#ddd;font-size:12px}
+img{display: block;width: 100%}
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}.clearfix{*+height:1%;}
+html{font-size: 50px}
+
+/*取消滚动条*/
+::-webkit-scrollbar {  display: none;  }
+
+img{ pointer-events: none; }/*禁止图片长按选中*/
+a,a:hover{  color: #282828;  }
+
+html,body{
+    height:100%;
+    -moz-user-select:none;-webkit-user-select:none; /*禁止文字选中*/
+    -webkit-overflow-scrolling: touch;              /*滚动顺滑*/
+    -webkit-tap-highlight-color: rgba(0,0,0,0);     /*取消ios上链接长按出现的半透明黑色遮罩*/
+    background: #f5f5f5;
+}
+/*超出文字显示省略号*/
+.overflowEllipsis{overflow: hidden;white-space: nowrap; text-overflow: ellipsis;}
+/*强制断句*/
+.wordBreakAll{word-wrap:break-word;word-break:break-all;}
+
+
+
+/*以640的设计图为准的字体大小，暂定为三档字体大小，每一次字体大小加1px 开始*/
+
+.fontSize09{font-size: 9px}
+.fontSize10{font-size: 10px}
+.fontSize11{font-size: 11px}
+.fontSize12{font-size: 12px}
+.fontSize13{font-size: 13px}
+.fontSize14{font-size: 14px}
+.fontSize15{font-size: 15px}
+.fontSize16{font-size: 16px}
+.fontSize17{font-size: 17px}
+.fontSize23{font-size: 23px}
+
+@media screen and (min-width: 321px){
+    .fontSize09{font-size: 10px}
+    .fontSize10{font-size: 11px}
+    .fontSize11{font-size: 12px}
+    .fontSize12{font-size: 13px}
+    .fontSize13{font-size: 14px}
+    .fontSize14{font-size: 15px}
+    .fontSize15{font-size: 16px}
+    .fontSize16{font-size: 17px}
+    .fontSize17{font-size: 18px}
+    .fontSize23{font-size: 24px}
+}
+@media screen and (min-width: 376px){
+    .fontSize09{font-size: 11px}
+    .fontSize10{font-size: 12px}
+    .fontSize11{font-size: 13px}
+    .fontSize12{font-size: 14px}
+    .fontSize13{font-size: 15px}
+    .fontSize14{font-size: 16px}
+    .fontSize15{font-size: 17px}
+    .fontSize16{font-size: 18px}
+    .fontSize17{font-size: 19px}
+    .fontSize23{font-size: 25px}
+}
+/*以640的设计图为准的字体大小，暂定为三档字体大小，每一次字体大小加1px 结束*/
+
+
+/*加载提示符*/
+.infinite-scroll-preloader{
+    width: 18px;
+    height:48px;
+    overflow: hidden;
+    margin: 10px auto 0;
+    background: url("http://file.diy.51app.cn/wp/icoImg/loading.gif") no-repeat;
+    background-size: 100%;
+}
+/*到底了提示开始*/
+
+.lastTips{
+    width: 100%;
+    text-align: center;
+    margin: 10px 0 0;
+    padding-bottom: 35px;
+    color: #a7a5a5;
+    font-size: .28rem;
+}
+.lastTips i {
+    display: inline-block;
+    margin:0 5px 5px;
+    width: 2rem;
+    height: 1px;
+}
+.lastTips .left-line {
+    background: linear-gradient(to right, #d9d9d9, #f0f0f0);
+    background: -webkit-linear-gradient(right, #d9d9d9, #f0f0f0);
+}
+.lastTips .right-line {
+    background: linear-gradient(to left, #d9d9d9, #f0f0f0);
+    background: -webkit-linear-gradient(left, #d9d9d9, #f0f0f0);
+}
+/*到底了提示结束*/
+
+/*回到顶部开始*/
+.gotoTop {
+    position: fixed;
+    bottom: .2rem;
+    right: .28rem;
+    width: .64rem;
+    height: .64rem;
+    z-index: 999;
+}
+.gotoTop.hide{display: none}
+/*回到顶部结束*/
+
+/*loading页面开始*/
+.hd-noLoad{
+    background: #fff;
+    position:absolute;
+    top:0;bottom:0;left:0;right:0;
+    z-index:99999;
+}
+.hd-noLoad .hd-loading{
+    width: 20px;
+    height: 20px;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20viewBox%3D'0%200%20120%20120'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20xmlns%3Axlink%3D'http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink'%3E%3Cdefs%3E%3Cline%20id%3D'l'%20x1%3D'60'%20x2%3D'60'%20y1%3D'7'%20y2%3D'27'%20stroke%3D'%236c6c6c'%20stroke-width%3D'11'%20stroke-linecap%3D'round'%2F%3E%3C%2Fdefs%3E%3Cg%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%20transform%3D'rotate(30%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%20transform%3D'rotate(60%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%20transform%3D'rotate(90%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%20transform%3D'rotate(120%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%20transform%3D'rotate(150%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.37'%20transform%3D'rotate(180%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.46'%20transform%3D'rotate(210%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.56'%20transform%3D'rotate(240%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.66'%20transform%3D'rotate(270%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.75'%20transform%3D'rotate(300%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.85'%20transform%3D'rotate(330%2060%2C60)'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+    background-position: 50%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    -webkit-animation: preloader-spin 1s step-end infinite;
+    animation: preloader-spin 1s step-end infinite;
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-left:-10px;
+    margin-top:-10px;
+    z-index:888;
+}
+.hd-hasLoad{
+    display: none;
+}
+@-webkit-keyframes preloader-spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    8.33333333% {
+        -webkit-transform: rotate(30deg);
+    }
+    16.66666667% {
+        -webkit-transform: rotate(60deg);
+    }
+    25% {
+        -webkit-transform: rotate(90deg);
+    }
+    33.33333333% {
+        -webkit-transform: rotate(120deg);
+    }
+    41.66666667% {
+        -webkit-transform: rotate(150deg);
+    }
+    50% {
+        -webkit-transform: rotate(180deg);
+    }
+    58.33333333% {
+        -webkit-transform: rotate(210deg);
+    }
+    66.66666667% {
+        -webkit-transform: rotate(240deg);
+    }
+    75% {
+        -webkit-transform: rotate(270deg);
+    }
+    83.33333333% {
+        -webkit-transform: rotate(300deg);
+    }
+    91.66666667% {
+        -webkit-transform: rotate(330deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+@keyframes preloader-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    8.33333333% {
+        transform: rotate(30deg);
+    }
+    16.66666667% {
+        transform: rotate(60deg);
+    }
+    25% {
+        transform: rotate(90deg);
+    }
+    33.33333333% {
+        transform: rotate(120deg);
+    }
+    41.66666667% {
+        transform: rotate(150deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    58.33333333% {
+        transform: rotate(210deg);
+    }
+    66.66666667% {
+        transform: rotate(240deg);
+    }
+    75% {
+        transform: rotate(270deg);
+    }
+    83.33333333% {
+        transform: rotate(300deg);
+    }
+    91.66666667% {
+        transform: rotate(330deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+/*loading页面结束*/

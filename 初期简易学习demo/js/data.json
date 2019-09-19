@@ -1,0 +1,129 @@
+{
+    "code": 200,
+    "message": "操作成功",
+    "data": {
+        "recommendGoods": [
+            {
+                "icoUrl": "https://api.51app.cn/resource/diymall/wp/IntegralMall2_0/7c965601.jpg",
+                "type": 2,
+                "id": 20,
+                "name": "DIY充电打火机",
+                "nowPrice": 68,
+                "sell": "643",
+                "ispostage": 1,
+                "speAct": 0,
+                "act": 10,
+                "companyId": 2
+            },
+            {
+                "icoUrl": "https://api.51app.cn/resource/diymall/wp/IntegralMall2_0/d81c0085.jpg",
+                "type": 2,
+                "id": 51,
+                "name": "DIY兔子摆台",
+                "nowPrice": 78,
+                "sell": "354",
+                "ispostage": 1,
+                "speAct": 0,
+                "act": 10,
+                "companyId": 2
+            },
+            {
+                "icoUrl": "https://api.51app.cn/resource/diymall/wp/IntegralMall2_0/fc972b16.jpg",
+                "type": 2,
+                "id": 50,
+                "name": "DIY大象摆台",
+                "nowPrice": 78,
+                "sell": "236",
+                "ispostage": 1,
+                "speAct": 0,
+                "act": 10,
+                "companyId": 2
+            },
+            {
+                "icoUrl": "https://api.51app.cn/resource/diymall/wp/IntegralMall2_0/928b23e3.jpg",
+                "type": 2,
+                "id": 24,
+                "name": "个性定制石版画",
+                "nowPrice": 89,
+                "sell": "757",
+                "ispostage": 1,
+                "speAct": 0,
+                "act": 10,
+                "companyId": 2
+            },
+            {
+                "icoUrl": "https://api.51app.cn/resource/diymall/wp/IntegralMall2_0/8aea2f85.jpg",
+                "type": 2,
+                "id": 7,
+                "name": "定制台历",
+                "nowPrice": 89,
+                "sell": "792",
+                "ispostage": 1,
+                "speAct": 0,
+                "act": 10,
+                "companyId": 2
+            },
+            {
+                "icoUrl": "https://api.51app.cn/resource/diymall/wp/IntegralMall2_0/23315d09.jpg",
+                "type": 2,
+                "id": 1,
+                "name": "DIY定制手机壳",
+                "nowPrice": 49.9,
+                "sell": "2580",
+                "ispostage": 1,
+                "speAct": 0,
+                "act": 10,
+                "companyId": 2
+            },
+            {
+                "icoUrl": "https://api.51app.cn/resource/diymall/wp/IntegralMall2_0/cb712c26.jpg",
+                "type": 2,
+                "id": 144,
+                "name": "美妆移动电源",
+                "nowPrice": 109,
+                "sell": "664",
+                "ispostage": 1,
+                "speAct": 0,
+                "act": 10,
+                "companyId": 2
+            },
+            {
+                "icoUrl": "https://api.51app.cn/resource/diymall/wp/IntegralMall2_0/8130a575.jpg",
+                "type": 2,
+                "id": 19,
+                "name": "3D定制手机壳",
+                "nowPrice": 49.9,
+                "sell": "1503",
+                "ispostage": 1,
+                "speAct": 0,
+                "act": 10,
+                "companyId": 2
+            },
+            {
+                "icoUrl": "https://api.51app.cn/resource/diymall/wp/IntegralMall2_0/190601eb.jpg",
+                "type": 2,
+                "id": 48,
+                "name": "DIY车载支架",
+                "nowPrice": 49.9,
+                "sell": "109",
+                "ispostage": 1,
+                "speAct": 0,
+                "act": 10,
+                "companyId": 2
+            },
+            {
+                "icoUrl": "https://api.51app.cn/resource/diymall/wp/IntegralMall2_0/c944e881.jpg",
+                "type": 2,
+                "id": 28,
+                "name": "DIY暖腰宝",
+                "nowPrice": 59,
+                "sell": "114",
+                "ispostage": 1,
+                "speAct": 0,
+                "act": 10,
+                "companyId": 2
+            }
+        ],
+        "banners": []
+    }
+}

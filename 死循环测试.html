@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+	</head>
+
+	<body>
+		<div id="app">
+			<!--<child-comp v-for="i in [1]" :key="Math.random()" :sub-prop="parentData"></child-comp>-->
+			<!--<child-comp v-for="i in [1]" :sub-prop="parentData"></child-comp>-->
+			<ul v-for="i of 10" :key="i">
+				<li v-if="getNum(i)">num:{{getNum2(i)}}</li>
+			</ul>
+
+		</div>
+		<script src="https://cdn.bootcss.com/vue/2.5.16/vue.js"></script>
+		<script type="text/javascript">
+			let globalNum = 1
+			Vue.component('child-comp', {
+				props: {
+					subProp: {}
+				},
+				data() {
+					return {
+						subData: []
+					};
+				},
+				template: '<div>childchildchild</div>',
+				computed: {
+					subComputed() {
+						return '222';
+					}
+				},
+				created() {
+					console.log(this.subComputed);
+					this.subData.push(1);
+				}
+			});
+			let vm = new Vue({
+				el: '#app',
+				data() {
+					return {
+						parentData: 'hello world',
+						num: 1
+					};
+				},
+				mounted() {
+					//          	setTimeout(()=>{
+					//          		this.num++
+					//          	},1000)
+				},
+				methods: {
+					getNum(i) {
+//						console.log(this.num)
+//						globalNum++
+						if(i>5){
+							return true
+						}
+						return false
+					},
+					getNum2(i) {
+						globalNum = i*10
+						return globalNum
+					},
+					getNum3(){
+						
+					}
+				}
+			})
+		</script>
+
+	</body>
+
+</html>

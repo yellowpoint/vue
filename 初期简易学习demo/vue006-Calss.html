@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta content="telephone=no,email=no" name="format-detection">
+		<meta name="App-Config" content="fullscreen=yes,useHistoryState=yes,transition=yes">
+		<title></title>
+		<style type="text/css">
+
+		</style>
+	</head>
+
+	<body>
+		<div id="app">
+			<!--<div v-bind:class="classObject"></div>-->
+			<h1 v-if="1>5">Yes</h1>
+<h1 v-else>No</h1>
+		</div>
+
+		<script src="js/vue-2.0.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/vue-resource.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var vm = new Vue({
+				el: '#app',
+				data: {
+//					isActive: true,
+//					error: null,
+//					classObject:  {
+//						'active': vm.isActive,
+//						'text-danger': this.error && this.error.type === 'fatal',
+//					}
+				},
+				computed: {
+					//					classObject: function() {
+					//						return {
+					//							active: this.isActive && !this.error,
+					//							'text-danger': this.error && this.error.type === 'fatal',
+					//						}
+					//					}
+				}
+			})
+		</script>
+
+	</body>
+
+</html>
