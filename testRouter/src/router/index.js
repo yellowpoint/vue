@@ -34,6 +34,11 @@ export default new Router({
 			path: '/picker',
 			name: 'picker',
 			component: pipe('picker')
+		},
+		{
+			path: '/tilt',
+			name: 'tilt',
+			component: pipe('tilt')
 		}
 	]
 })
