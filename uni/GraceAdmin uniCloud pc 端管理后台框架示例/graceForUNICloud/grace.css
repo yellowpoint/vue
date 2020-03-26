@@ -1,0 +1,71 @@
+*{font-size:14px; font-family:Microsoft Yahei, PingFangSC-Regular, sans-serif; -webkit-user-select:auto; user-select:auto;}
+body, html {
+    -webkit-user-select:auto;
+    user-select:auto;
+}
+a{color:#007AFF; text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+/* 图标 */
+@font-face{
+	font-family : "gui-admin"; 
+	font-weight : normal;
+	font-style  : normal; 
+	src         : url('https://at.alicdn.com/t/font_1664438_ou3lll7xux.ttf') format('truetype');
+}
+.gui-icons{font-family:"gui-admin"; font-style:normal;}
+.gui-icons:before{padding-right:6px;}
+.icon-user:before{content:"\e60a";}
+.icon-title:before{content:"\e66b";}
+.icon-add:before{content:"\e600";}
+.icon-remove:before{content:"\e6b0";}
+.icon-edit:before{content:"\e69a";}
+.icon-key:before{content:"\e626";}
+.icon-logoff:before{content:"\e681";}
+.icon-jt-left:before{content:"\e601";}
+.icon-jt-right:before{content:"\e602";}
+.icon-jt-up:before{content:"\e654";}
+.icon-jt-down:before{content:"\e603";}
+
+
+/* flex 布局 */
+.gui-flex{display:flex;}
+.gui-rows{display:flex; flex-direction:row;}
+.gui-columns{display:flex; flex-direction:column;}
+.gui-wrap{display:flex;  flex-direction:row; flex-wrap:wrap;}
+.gui-nowrap{display:flex; flex-direction:row; flex-wrap:nowrap;}
+.gui-space-between{display:flex; flex-direction:row; justify-content:space-between;}
+.gui-flex-center{display:flex; flex-direction:row; justify-content:center;}
+.gui-flex-end{display:flex; flex-direction:row; justify-content:flex-end;}
+.gui-flex-vtop{align-items:flex-start;}
+.gui-flex-vcenter{align-items:center;}
+.gui-flex-vbottom{align-items:flex-end;}
+.gui-no-scale{flex-shrink:0;}
+.gui-flex1{flex:1;}
+.gui-flex-v1{display:flex; flex-direction:column; flex:1;}
+
+.gui-fr{float:right !important;}
+.gui-fl{float:left !important;}
+
+
+.gui-table{border-top:1px solid #F1F1F1; border-left:1px solid #F1F1F1; width:100%;}
+.gui-table thead td{background:#F6F7F8;}
+.gui-table td{font-size:14px; line-height:1.5em; padding:12px 10px; border-bottom:1px solid #F1F1F1; border-right:1px solid #F1F1F1;}
+.gui-table-noborder{border:none !important;}
+.gui-table-noborder td{border:none !important;}
+
+
+.gui-button{line-height:30px; height:30px; font-size:14px; float:left; cursor:pointer;}
+.gui-button:active{opacity:0.9;}
+.gui-input{border:1px solid #F1F1F1; font-size:14px; line-height:22px; padding:8px;}
+.gui-text-center{text-align:center;}
+.gui-textarea{width:100%; height:200px; border:1px solid #F1F1F1; font-size:14px; line-height:20px; padding:12px; box-sizing:border-box;}
+
+.gui-body{width:100%; box-sizing:border-box; padding:25px 25px 25px 225px;}
+.gui-body-title{width:100%; box-sizing:border-box; text-indent:25px; line-height:50px; font-size:15px; padding-left:200px; background-color: #F1F1F1;}
+.gui-body-title text{color:#3688FF; float:right; margin-right:25px; cursor:pointer;}
+.gui-tips{font-size:15px; line-height:2em; padding:10px 20px; color:#303030; background:#F7F8F9;  border-left:5px solid #E6A23C; text-indent:0;}
+.gui-do-btns{padding:10px; cursor:pointer;}
+
+.gui-radio-group{}
+.gui-radio-group label{float:left; margin:5px 10px 5px 0;}
