@@ -1,0 +1,21 @@
+{
+  "pages": [{
+    "path": "pages/index/index",
+    "style": {
+      "navigationBarTitleText": "uniCloud"
+    }
+  }, {
+    "path": "pages/wxpay/wxpay",
+    "style": {}
+  }    ,{
+            "path" : "pages/wxpay-check/wxpay-check",
+            "style" : {}
+        }
+    ],
+  "globalStyle": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#007AFF",
+    "backgroundColor": "#FFFFFF"
+  }
+}
