@@ -1,0 +1,24 @@
+{
+  "name": "cloudfunctions-dev",
+  "version": "0.0.1",
+  "description": "云函数开发",
+  "scripts": {
+    "build": "node build-api.js",
+    "wbuild": "node build"
+  },
+  "author": "wangyaqi@dcloud.io",
+  "license": "MIT",
+  "devDependencies": {
+    "rollup": "^1.26.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "validator": "^12.2.0",
+    "webpack": "^4.41.5"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "jwt-simple": "^0.5.6",
+    "uuid": "^3.4.0",
+    "zopfli-webpack-plugin": "^0.1.0"
+  }
+}

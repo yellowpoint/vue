@@ -1,0 +1,10 @@
+// 本文件中的json内容将在云函数【上传并运行】时作为参数传给云函数。
+//{"model":"Login","mobile":"13333333333","pwd":"123456"}
+// {"model":"RegMember","mobile":"17780520414","pwd":"123456","no":"1255751331887899904","code":"12345"}
+//{"model":"ForgetPwd","mobile":"17780520414","pwd":"aasswwe","no":"1255751331887899904","code":"12345"}
+
+{"model":"ThirdLogin","code":"071A0VQA1YZhWa0N9vTA12X7RA1A0VQr"}
+
+
+
+

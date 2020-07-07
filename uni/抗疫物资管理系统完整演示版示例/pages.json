@@ -1,0 +1,169 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/mainindex/mainindex",
+			"style": {
+				"navigationBarTitleText": "新冠-物资管理系统"
+			}
+		},
+		{
+			"path": "pages/mater_oper/materListOut",
+			"style": {
+				"navigationBarTitleText": "发放管理",
+				// "navigationStyle": "custom" ,//导航栏样式自定义
+				"enablePullDownRefresh": true //开启下拉刷新
+			}
+		},
+		{
+			"path": "pages/mainme/mainme",
+			"style": {
+				"navigationBarTitleText": "我的",
+				// "navigationStyle": "custom" ,//导航栏样式自定义
+				"enablePullDownRefresh": true //开启下拉刷新
+			}
+		},
+		{
+			"path": "pages/login/login",
+			"style": {
+				"navigationBarTitleText": "登录"
+			}
+		}, {
+			"path": "pages/mainme/mainmeinfo",
+			"style": {
+				"navigationBarTitleText": "个人资料"
+			}
+		},
+		{
+			"path": "pages/mainme/mainmegetcp",
+			"style": {
+				"navigationBarTitleText": "单位选择"
+			}
+		},
+		{
+			"path": "pages/mainme/mainmeinfoedit",
+			"style": {
+				"navigationBarTitleText": "编辑资料"
+			}
+		}, {
+			"path": "pages/mainuser_oper/mainuserList",
+			"style": {
+				"navigationBarTitleText": "人员管理",
+				"enablePullDownRefresh": true //开启下拉刷新
+			}
+		}, {
+			"path": "pages/mainuser_oper/mainuserinfo",
+			"style": {
+				"navigationBarTitleText": "人员管理-新增"
+			}
+		},
+		{
+			"path": "pages/matermodel_oper/matermodelList",
+			"style": {
+				"navigationBarTitleText": "物资资料",
+				"enablePullDownRefresh": true //开启下拉刷新
+			}
+		},
+		{
+			"path": "pages/matermodel_oper/matermodelInfo",
+			"style": {
+				"navigationBarTitleText": "物资资料-增加"
+			}
+		},
+		{
+			"path": "pages/mainstroage/mainstroageList",
+			"style": {
+				"navigationBarTitleText": "物资库存",
+				"enablePullDownRefresh": true //开启下拉刷新
+			}
+		},
+		{
+			"path": "pages/materialtype_oper/materialtypeList",
+			"style": {
+				"navigationBarTitleText": "物资类别",
+				"enablePullDownRefresh": true //开启下拉刷新
+			}
+		},
+		{
+			"path": "pages/materialtype_oper/materialtypeInfo",
+			"style": {
+				"navigationBarTitleText": "物资类别"
+			}
+		},
+		{
+			"path": "pages/mecompany_oper/mecompanyList",
+			"style": {
+				"navigationBarTitleText": "单位管理",
+				"enablePullDownRefresh": true //开启下拉刷新
+			}
+		},
+		{
+			"path": "pages/mecompany_oper/mecompanyInfo",
+			"style": {
+				"navigationBarTitleText": "单位资料"
+			}
+		},
+		{
+			"path": "pages/medepartment_oper/medepartmentList",
+			"style": {
+				"navigationBarTitleText": "部门管理",
+				"enablePullDownRefresh": true //开启下拉刷新
+			}
+		},
+		{
+			"path": "pages/medepartment_oper/medepartmentInfo",
+			"style": {
+				"navigationBarTitleText": "部门资料"
+			}
+		},{
+			"path": "pages/mater_oper/materListIn",
+			"style": {
+				"navigationBarTitleText": "物资入库管理",
+				"enablePullDownRefresh": true //开启下拉刷新
+			}
+		}, {
+			"path": "pages/mater_oper/materInfo",
+			"style": {
+				"navigationBarTitleText": "物资入库-新增"
+			}
+		}, {
+			"path": "pages/mater_oper/materInfoDetail",
+			"style": {
+				"navigationBarTitleText": "添加物资明细"
+			}
+		}
+	],
+	"easycom": {
+		"autoscan": true
+	},
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "物资管理系统",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"color": "#B5B5B5",
+		"selectedColor": "#1296db",
+		"borderStyle": "black",
+		"backgroundColor": "#FFFFFF",
+		"list": [{
+				"pagePath": "pages/mainindex/mainindex",
+				"text": "首页",
+				"iconPath": "static/tabbar/indexpage.png",
+				"selectedIconPath": "static/tabbar/indexpage_fill.png"
+			},
+			{
+				"pagePath": "pages/mater_oper/materListOut",
+				"text": "发放",
+				"iconPath": "static/tabbar/add.png",
+				"selectedIconPath": "static/tabbar/add_fill.png"
+			},
+			{
+				"pagePath": "pages/mainme/mainme",
+				"text": "我的",
+				"iconPath": "static/tabbar/me.png",
+				"selectedIconPath": "static/tabbar/me_fill.png"
+			}
+		]
+	}
+}

@@ -1,0 +1,39 @@
+'use strict';
+
+const db = uniCloud.database();
+exports.main = async (event, context) => {
+const {compid,section,desc,_id} = event;	
+const collection = db.collection('department')
+
+const compInDB = await collection.where({ _id:_id}).get()
+	if ( compInDB.data.length == 0) {
+		const compDB = await collection.where({ section:event.section}).get()
+		if ( compDB.data.length == 0) {
+	
+		//单位不存在
+		await collection.add({compid,section,desc});
+			return {
+					success: true,
+					code: 200,
+					msg: '成功'
+				}
+			}else{
+				return {
+						success: false,
+						code: 2,
+						msg: '失败'
+					}
+			}	
+				
+				
+		}else{
+		//单位已存在
+		   await collection.doc(_id).update({compid,section,desc});
+	
+		
+			return {success: true,code: 200,msg: '更新成功'}
+		}
+
+
+
+};

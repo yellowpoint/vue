@@ -1,0 +1,2 @@
+// 本文件中的json内容将在云函数【上传并运行】时作为参数传给云函数。
+{"token":"b2d485100c61f87c78da07b69ec434cc","pageNum":1,"pageSize":20,"tabId":1,"url":"NewsListData","model":"Data/NewsListData"}

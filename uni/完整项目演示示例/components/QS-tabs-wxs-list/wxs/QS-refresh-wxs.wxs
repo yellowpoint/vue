@@ -1,0 +1,128 @@
+var startY = 0;
+var touchStatus = 0;
+var refreshStatus = 1;
+var refreshShow = false;
+var readyRefresh = false;
+var refreshDistance = 90;
+var currentReadyRefresh = true;
+
+var touchstart = function(e, ins) {
+	if(!currentReadyRefresh) return;
+	startY = e.touches[0].pageY;
+	var refreshContianer = ins.selectComponent('#refresh-container');
+	if (refreshStatus === 1) {
+		refreshContianer.setStyle({
+			'transition': '0s'
+		})
+	}
+	if(touchStatus!==0) touchStatus = 0;
+}
+
+var touchmove = function(e, ins) {
+	if(!currentReadyRefresh) return;
+	var refreshContianer = ins.selectComponent('#refresh-container');
+	if (refreshStatus === 1 || refreshStatus === 2) {
+		var moveY = e.touches[0].pageY;
+		var diffY = (moveY - startY) * 0.5;
+		if (diffY < 0) {
+			diffY = 0;
+		} else {
+			if (readyRefresh === false) {
+				ins.callMethod('setReadyRefresh', {
+					readyRefresh: true
+				});
+			}
+			if (refreshShow === false) {
+				ins.callMethod('setRefreshShow', {
+					refreshShow: true
+				});
+			}
+		}
+		refreshContianer.setStyle({
+			'transform': 'translateY(' + (diffY) + 'px)'
+		})
+
+		var refreshImageComponent = ins.selectComponent('#refreshImage');
+		if (refreshImageComponent) {
+			refreshImageComponent.setStyle({
+				'transform': 'rotate(' + (diffY*10) + 'deg)'
+			})
+		}
+
+		if (diffY >= refreshDistance) {
+			if (refreshStatus !== 2) ins.callMethod('setRefreshStatus', 2);
+		} else {
+			if (refreshStatus !== 1) {
+				ins.callMethod('setRefreshStatus', 1);
+			}
+		}
+	}
+	if(touchStatus!==1) touchStatus = 1;
+}
+
+var touchend = function(e, ins) {
+	if(!currentReadyRefresh) return;
+	var refreshContianer = ins.selectComponent('#refresh-container');
+	if (refreshStatus === 1 || refreshStatus === 2) {
+		ins.callMethod('setReadyRefresh', {
+			readyRefresh: false
+		});
+		if (refreshStatus === 2) {
+			ins.callMethod('setRefreshStatus', 3);
+			refreshContianer.setStyle({
+				'transform': 'translateY(' + refreshDistance + 'px)',
+				'transition': '.3s'
+			})
+		} else {
+			if(touchStatus === 1) {
+				refreshContianer.setStyle({
+					'transform': 'translateY(0)',
+					'transition': '.3s'
+				})
+				ins.callMethod('setRefreshShow', {
+					refreshShow: false
+				});
+			}
+		}
+	}
+	if(touchStatus!==2) touchStatus = 2;
+}
+
+var refreshStatusChange = function(n, o, ins) {
+	refreshStatus = n;
+	if (n === 4 || n === 5) {
+		var refreshContianer = ins.selectComponent('#refresh-container');
+		refreshContianer.setStyle({
+			'transform': 'translateY(0)',
+			'transition': '.3s 1s'
+		})
+		ins.callMethod('setRefreshStatus', 6);
+	}
+}
+
+var refreshShowChange = function (n) {
+	refreshShow = n
+}
+
+var readyRefreshChange = function (n) {
+	readyRefresh = n
+}
+
+var refreshDistanceChange = function (n) {
+	refreshDistance = n
+}
+
+var curReadyRefreshChange = function (n) {
+	currentReadyRefresh = n;
+}
+
+module.exports = {
+	touchstart: touchstart,
+	touchmove: touchmove,
+	touchend: touchend,
+	refreshStatusChange: refreshStatusChange,
+	refreshShowChange: refreshShowChange,
+	readyRefreshChange: readyRefreshChange,
+	refreshDistanceChange: refreshDistanceChange,
+	curReadyRefreshChange: curReadyRefreshChange
+}
