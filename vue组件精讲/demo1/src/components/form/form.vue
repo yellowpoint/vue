@@ -1,8 +1,8 @@
 <!-- 组件说明 -->
 <template>
-  <div class="">
-
-  </div>
+  <form>
+    <slot></slot>
+  </form>
 </template>
 
 <script>
@@ -13,9 +13,11 @@ export default {
 
   },
   props: {
-    prop: {
-      type: Object,
-      default: () => ({})
+    model: {
+      type: Object
+    },
+    rules: {
+      type: Object
     }
   },
   data() {
