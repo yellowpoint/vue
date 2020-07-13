@@ -22,6 +22,11 @@ const routes = [{
     name: 'form',
     component: () => import('@/views/formPage.vue')
   },
+  {
+    path: '/display',
+    name: 'display',
+    component: () => import('@/views/display.vue')
+  },
 ]
 
 const router = new VueRouter({
