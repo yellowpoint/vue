@@ -7,6 +7,9 @@ Vue.config.productionTip = false
 import mixin from '@/mixins/emitter'
 Vue.mixin(mixin)
 
+import Alert from '@/components/alert/alert.js'
+Vue.prototype.$Alert = Alert
+
 new Vue({
   router,
   render: h => h(App)

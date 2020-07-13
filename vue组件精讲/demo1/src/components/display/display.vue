@@ -79,6 +79,9 @@ export default {
   },
   mounted() {
     this.renderCode();
+    this.$Alert.info({
+      content: '我是提示信息 1'
+    });
   },
   beforeDestroy() {
     this.destroyCode()
