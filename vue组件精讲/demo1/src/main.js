@@ -4,6 +4,9 @@ import router from './router'
 
 Vue.config.productionTip = false
 
+import mixin from '@/mixins/emitter'
+Vue.mixin(mixin)
+
 new Vue({
   router,
   render: h => h(App)
