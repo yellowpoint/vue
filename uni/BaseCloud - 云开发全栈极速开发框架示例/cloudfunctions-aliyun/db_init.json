@@ -1,0 +1,367 @@
+// 在本文件中可配置云数据库初始化，数据格式见：https://uniapp.dcloud.io/uniCloud/cf-database?id=db_init
+
+// 编写完毕后对本文件点右键，可按配置规则创建表和添加数据
+
+{
+	"uni-id-users": {
+		"data": [
+			{
+			  "password": "5036a4fb1bb73640d1a521b49cd1918005dc380c",
+			  "register_date": 1595658646343,
+			  "register_ip": "",
+			  "status" : 0 ,
+			  "token": [],
+			  "username": "admin" ,
+			  "isSuperAdmin" : true ,
+			  "realNameAuth" : {
+				  "contact_person" : "超级管理员"
+			  }
+			}
+		],
+		"index": [{
+			"IndexName": "username",
+			"MgoKeySchema": {
+				"MgoIndexKeys": [{
+					"Name": "username",
+					"Direction": "1"
+				}],
+				"MgoIsUnique": false
+			}
+		}, {
+			"IndexName": "mobile",
+			"MgoKeySchema": {
+				"MgoIndexKeys": [{
+					"Name": "mobile",
+					"Direction": "1"
+				}],
+				"MgoIsUnique": false
+			}
+		}, {
+			"IndexName": "email",
+			"MgoKeySchema": {
+				"MgoIndexKeys": [{
+					"Name": "email",
+					"Direction": "1"
+				}],
+				"MgoIsUnique": false
+			}
+		}]
+	},
+	"uni-verify": {
+		"data": [],
+		"index": [{
+			"IndexName": "mobile",
+			"MgoKeySchema": {
+				"MgoIndexKeys": [{
+					"Name": "mobile",
+					"Direction": "1"
+				}, {
+					"Name": "code",
+					"Direction": "1"
+				}],
+				"MgoIsUnique": false
+			}
+		}, {
+			"IndexName": "email",
+			"MgoKeySchema": {
+				"MgoIndexKeys": [{
+					"Name": "email",
+					"Direction": "1"
+				}, {
+					"Name": "code",
+					"Direction": "1"
+				}],
+				"MgoIsUnique": false
+			}
+		}]
+	},
+	"t_menu" : {
+		"data" : [{
+			"_id": "5f2d2d7535a9a8000180f91f",
+			"type": 1,
+			"name": "系统设置",
+			"icon": "bIcon-setFill",
+			"orderNum": 30,
+			"parentId": 0,
+			"isShow": true
+		}, {
+			"_id": "5f2d42752fae6900011d33d6",
+			"type": 2,
+			"name": "菜单管理",
+			"key": "menu",
+			"orderNum": 1,
+			"saveLogUrl": "",
+			"parentId": "5f2d2d7535a9a8000180f91f",
+			"url": ["admin/menu/list"],
+			"pages": "/pages/menu/menuList",
+			"isShow": true
+		}, {
+			"_id": "5f2d429d2fae6900011d3492",
+			"type": 3,
+			"name": "编辑",
+			"orderNum": 1,
+			"saveLogUrl": ["admin/menu/save"],
+			"parentId": "5f2d42752fae6900011d33d6",
+			"url": ["admin/menu/info", "admin/menu/save", "admin/menu/listByType"],
+			"isShow": true
+		}, {
+			"_id": "5f2d42b0761748000140a61a",
+			"type": 3,
+			"name": "删除",
+			"orderNum": 2,
+			"saveLogUrl": ["admin/menu/delete"],
+			"parentId": "5f2d42752fae6900011d33d6",
+			"url": ["admin/menu/delete"],
+			"isShow": true
+		}, {
+			"_id": "5f2e0a8d51870b00011b949b",
+			"type": 2,
+			"name": "用户管理",
+			"key": "user",
+			"orderNum": 2,
+			"saveLogUrl": "",
+			"parentId": "5f2d2d7535a9a8000180f91f",
+			"url": ["admin/user/list"],
+			"pages": "/pages/user/userList",
+			"isShow": true
+		}, {
+			"_id": "5f2e0ad12710fd0001bddd16",
+			"type": 3,
+			"name": "编辑",
+			"orderNum": 1,
+			"saveLogUrl": ["admin/user/save"],
+			"parentId": "5f2e0a8d51870b00011b949b",
+			"url": ["admin/user/info", "admin/user/save", "admin/role/options"],
+			"isShow": true
+		}, {
+			"_id": "5f2e0ae6f4cba60001a1c68c",
+			"type": 3,
+			"name": "删除",
+			"orderNum": 2,
+			"saveLogUrl": ["admin/user/delete"],
+			"parentId": "5f2e0a8d51870b00011b949b",
+			"url": ["admin/user/delete"],
+			"isShow": true
+		}, {
+			"_id": "5f2e0afa11063f0001e9992a",
+			"type": 3,
+			"name": "禁用",
+			"orderNum": 3,
+			"saveLogUrl": ["admin/user/changeStatus"],
+			"parentId": "5f2e0a8d51870b00011b949b",
+			"url": ["admin/user/changeStatus"],
+			"isShow": true
+		}, {
+			"_id": "5f2e0b852710fd0001bdde32",
+			"type": 2,
+			"name": "角色管理",
+			"key": "role",
+			"orderNum": 3,
+			"saveLogUrl": "",
+			"parentId": "5f2d2d7535a9a8000180f91f",
+			"url": ["admin/role/list"],
+			"pages": "/pages/role/roleList",
+			"isShow": true
+		}, {
+			"_id": "5f2e0ba722b77b0001c469ed",
+			"type": 3,
+			"name": "编辑",
+			"orderNum": 1,
+			"saveLogUrl": ["admin/role/save"],
+			"parentId": "5f2e0b852710fd0001bdde32",
+			"url": ["admin/role/info", "admin/role/save"],
+			"isShow": true
+		}, {
+			"_id": "5f2e0bba35a9a80001885402",
+			"type": 3,
+			"name": "删除",
+			"orderNum": 2,
+			"saveLogUrl": ["admin/role/delete"],
+			"parentId": "5f2e0b852710fd0001bdde32",
+			"url": ["admin/role/delete"],
+			"isShow": true
+		}, {
+			"_id": "5f2e269422b77b0001c49555",
+			"type": 2,
+			"name": "操作日志",
+			"key": "operateLog",
+			"orderNum": 4,
+			"saveLogUrl": "",
+			"parentId": "5f2d2d7535a9a8000180f91f",
+			"url": ["admin/operateLog"],
+			"pages": "/pages/operateLog/operateLogList",
+			"isShow": true
+		}, {
+			"_id": "5f2e26c92fae6900012445d7",
+			"type": 2,
+			"name": "系统参数配置",
+			"key": "paramConfig",
+			"orderNum": 5,
+			"saveLogUrl": "",
+			"parentId": "5f2d2d7535a9a8000180f91f",
+			"url": ["admin/paramConfig/list"],
+			"pages": "/pages/paramConfig/paramConfigList",
+			"isShow": true
+		}, {
+			"_id": "5f2e26ee35a9a80001888096",
+			"type": 3,
+			"name": "编辑",
+			"orderNum": 1,
+			"saveLogUrl": ["admin/paramConfig/save"],
+			"parentId": "5f2e26c92fae6900012445d7",
+			"url": ["admin/paramConfig/save", "admin/paramConfig/info"],
+			"isShow": true
+		}, {
+			"_id": "5f2e27002fae690001244620",
+			"type": 3,
+			"name": "删除",
+			"orderNum": 2,
+			"saveLogUrl": ["admin/paramConfig/delete"],
+			"parentId": "5f2e26c92fae6900012445d7",
+			"url": ["admin/paramConfig/delete"],
+			"isShow": true
+		}, {
+			"_id": "5f2f67bd76174800014a68dd",
+			"type": 2,
+			"name": "修改个人信息",
+			"key": "setting",
+			"orderNum": 6,
+			"saveLogUrl": ["admin/user/modify"],
+			"isShow": false,
+			"parentId": "5f2d2d7535a9a8000180f91f",
+			"url": ["admin/user/myInfo", "admin/user/modify"],
+			"pages": "/pages/setting/setting"
+		}],
+		"index" : [
+			{
+				"IndexName": "type",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "type",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			},
+			{
+				"IndexName": "parentId",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "parentId",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			},
+			{
+				"IndexName": "orderNum",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "orderNum",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			}
+		]
+	},
+	"t_role" : {
+		"data" : [
+			{
+			  "name": "日常管理员",
+			  "type": 1,
+			  "remark": "日常系统维护，拥有全部管理权限，非超级管理员。",
+			  "menuIds": [
+			    "5f2d2d7535a9a8000180f91f",
+			    "5f2d429d2fae6900011d3492",
+			    "5f2d42b0761748000140a61a",
+			    "5f2e0ad12710fd0001bddd16",
+			    "5f2e0ae6f4cba60001a1c68c",
+			    "5f2e0afa11063f0001e9992a",
+			    "5f2e0ba722b77b0001c469ed",
+			    "5f2e0bba35a9a80001885402",
+			    "5f2e26ee35a9a80001888096",
+			    "5f2e27002fae690001244620",
+			    "5f2d42752fae6900011d33d6",
+			    "5f2e0a8d51870b00011b949b",
+			    "5f2e0b852710fd0001bdde32",
+			    "5f2e269422b77b0001c49555",
+			    "5f2e26c92fae6900012445d7"
+			  ],
+			  "createTime": 1596839468038,
+			  "updateTime": 1596927814787
+			}
+		],
+		"index" : [
+			{
+				"IndexName": "name",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "name",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			},
+			{
+				"IndexName": "menuIds",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "menuIds",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			}
+		]
+	},
+	"t_operate_log" : {
+		"data" : [
+			
+		],
+		"index" : [
+			{
+				"IndexName": "userName",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "userName",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			},
+			{
+				"IndexName": "actionName",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "actionName",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			},
+			{
+				"IndexName": "name",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "name",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			}
+		]
+	},
+	"t_param_config" : {
+		"data" : [
+			{
+			  "_id" : "LOG_REMAIN_DAYS" ,
+			  "name": "操作日志保留天数",
+			  "value": 0,
+			  "remark": "单位：天，在uniCloud管理端启动定时任务后，系统将自动删除过期的操作日志。",
+			  "updateTime": 1596957255271
+			}
+		],
+		"index" : []
+	}
+}
