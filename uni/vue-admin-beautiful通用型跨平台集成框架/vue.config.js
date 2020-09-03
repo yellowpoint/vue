@@ -57,8 +57,8 @@ module.exports = {
     open: true,
     noInfo: false,
     overlay: {
-      warnings: true,
-      errors: true,
+      warnings: false,
+      errors: false,
     },
     after: mockServer(),
   },
