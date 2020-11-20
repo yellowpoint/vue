@@ -1,0 +1,13 @@
+{
+  "component": true,
+  "usingComponents": {
+    "list-uni-clientdb-default": "/pages/system/user/list-uni-clientdb-default",
+    "uni-clientdb": "/components/uni-clientdb/uni-clientdb",
+    "uni-table": "/components/uni-table/uni-table",
+    "uni-tr": "/components/uni-tr/uni-tr",
+    "uni-th": "/components/uni-th/uni-th",
+    "uni-td": "/components/uni-td/uni-td",
+    "uni-dateformat": "/components/uni-dateformat/uni-dateformat",
+    "uni-pagination": "/components/uni-pagination/uni-pagination"
+  }
+}

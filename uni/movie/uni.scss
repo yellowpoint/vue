@@ -1,0 +1,83 @@
+/**
+ * 下方引入的为uView UI的集成样式文件，为scss预处理器，其中包含了一些"u-"开头的自定义变量
+ * 使用的时候，请将下面的一行复制到您的uniapp项目根目录的uni.scss中即可
+ * uView自定义的css类名和scss变量，均以"u-"开头，不会造成冲突，请放心使用 
+ */
+@import 'uview-ui/theme.scss';
+
+@mixin font($size:sm,$color:main){
+	@if $size==xs{
+		font-size: $u-font-xs;
+	}@else if $size==sm{
+		font-size: $u-font-sm;
+	}@else if $size==md{
+		font-size: $u-font-md;
+	}@else if $size==lg{
+		font-size: $u-font-lg;
+	}@else if $size==xl{
+		font-size: $u-font-xl;
+		font-size: $u-font-xl;
+	}@else {
+		font-size: $size;
+	}
+	
+	@if $color==main{
+		color: $u-main-color;
+	}@else if $color==content{
+		color: $u-content-color;
+	}@else if $color==tips{
+		color: $u-tips-color;
+	}@else if $color==light{
+		color: $u-light-color;
+	}@else if $color==border{
+		color: $u-border-color;
+	}@else if $color==bg{
+		color: $u-bg-color;
+	}@else{
+		color: $color;
+	}
+	
+}
+
+/*按钮内文字水平垂直居中*/
+@mixin center() {
+    display: flex;
+		justify-content: center;
+    align-items: center;
+}
+
+ /*点击态*/
+@mixin active() {
+		position: relative;
+		cursor: pointer;
+		overflow: hidden;
+		&:active:before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				right: 0;
+				z-index: 5;
+				background: rgba(0, 0, 0, .1);
+		}
+}
+@mixin btn {
+	@include center;
+	@include active;
+}
+
+/*单行或多行省略*/
+@mixin ellipsis($lines: 1) {
+    @if $lines != 1 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: $lines;
+        -webkit-box-orient: vertical;
+    }@else {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+}
