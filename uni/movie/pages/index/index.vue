@@ -4,7 +4,7 @@
 		<view class="text-area">
 			<text class="title">{{title}}</text>
 		</view>
-		<u-button ripple type="primary">点击签到</u-button>
+		<u-button ripple type="primary" @click="add">点击签到</u-button>
 	</view>
 </template>
 
@@ -19,35 +19,40 @@
 
 		},
 		methods: {
-
+			add() {
+				uniCloud.callFunction({
+					name: 'movie',
+					data: {
+						action: 'user/add',
+						data: {
+							_id:111,
+							name: 'aaaa'
+						}
+					}
+				})
+			}
 		}
 	}
 </script>
 
 <style lang="scss" scoped>
 	.content {
-		display: flex;
+		@include center;
 		flex-direction: column;
-		align-items: center;
-		justify-content: center;
 	}
 
 	.logo {
 		height: 200rpx;
 		width: 200rpx;
 		margin-top: 200rpx;
-		margin-left: auto;
-		margin-right: auto;
 		margin-bottom: 50rpx;
 	}
 
 	.text-area {
-		display: flex;
-		justify-content: center;
 		margin-bottom: 40rpx;
 	}
 
 	.title {
-		@include font(40rpx,yellowgreen);
+		@include font(xl, $u-type-primary);
 	}
 </style>

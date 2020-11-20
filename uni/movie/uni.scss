@@ -40,10 +40,16 @@
 }
 
 /*按钮内文字水平垂直居中*/
-@mixin center() {
-    display: flex;
+@mixin center($direction:all) {
+	display: flex;
+	@if $direction==width {
 		justify-content: center;
-    align-items: center;
+	}@else if $direction==height{
+		align-items: center;
+	}@else{
+		justify-content: center;
+		align-items: center;
+	}
 }
 
  /*点击态*/
@@ -80,4 +86,9 @@
         white-space: nowrap;
         text-overflow: ellipsis;
     }
+}
+
+@mixin iphoneX() {
+	padding-bottom: constant(safe-area-inset-bottom);
+	padding-bottom: env(safe-area-inset-bottom);
 }
