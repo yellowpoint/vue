@@ -29,6 +29,7 @@ async function cloudFun(name, data = {}) {
 			return VM.$toast('服务器内部错误')
 		}
 		res = res.result
+		
 		// 兼容没有写code的数据格式
 		if (res.code == null) {
 			resolve(res)
