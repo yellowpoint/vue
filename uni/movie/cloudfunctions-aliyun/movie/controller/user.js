@@ -5,7 +5,12 @@ const uniID = require('uni-id')
 const db = uniCloud.database();
 const collection_goods = db.collection('goods');
 module.exports = class UserController extends Controller {
-
+	test() {
+		return '测试'
+	}
+	test2() {
+		return 'err-3010-添加失败'
+	}
 	async add() {
 		let res = await collection_goods.add(this.ctx.data)
 		console.log('添加商品', res)
@@ -32,6 +37,12 @@ module.exports = class UserController extends Controller {
 			username,
 			password
 		} = this.ctx.data
+		return uniID.register({
+			username,
+			password,
+			role: ["admin2"]
+		})
+		
 		const admin = await this.service.user.hasAdmin()
 		if (admin) {
 			return {

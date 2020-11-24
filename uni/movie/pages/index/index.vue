@@ -5,6 +5,7 @@
 			<text class="title">{{title}}</text>
 		</view>
 		<u-button ripple type="primary" @click="add">点击签到</u-button>
+		<u-button ripple type="primary" @click="login">登录/注册</u-button>
 	</view>
 </template>
 
@@ -30,6 +31,9 @@
 						}
 					}
 				})
+			},
+			login(){
+				this.$u.route('/pages/login/login')
 			}
 		}
 	}

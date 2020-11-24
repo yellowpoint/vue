@@ -36,4 +36,9 @@ Vue.use(httpInterceptor, app);
 import httpApi from '@/common/http.api.js';
 Vue.use(httpApi, app);
 
+import api_cloud from '@/common/api_cloud.js';
+Vue.prototype.$api = api_cloud
+
+Vue.prototype.$toast = app.$u.toast
 app.$mount();
+export default app

@@ -5,6 +5,16 @@
 			"style": {
 				"navigationBarTitleText": "YellowPoint"
 			}
+		},
+		{
+			"path": "pages/login/login",
+			"style": {}
+		}, {
+			"path": "pages/login/forget",
+			"style": {}
+		}, {
+			"path": "pages/login/register",
+			"style": {}
 		}
 	],
 	"globalStyle": {
