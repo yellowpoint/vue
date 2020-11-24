@@ -34,6 +34,7 @@ async function cloudFun(name, data = {}) {
 			resolve(res)
 		}
 
+
 		if (res.code == 200 || res.code == 0) {
 			resolve(res.data)
 		} else {
