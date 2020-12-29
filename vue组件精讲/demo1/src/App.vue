@@ -5,10 +5,35 @@
       <router-link to="/about">About</router-link> |
       <router-link to="/form">form</router-link>
     </div>
-    <router-view/>
+    <router-view />
   </div>
 </template>
+<script>
 
+export default {
+
+  data() {
+    return {}
+  },
+  computed: {
+    // userInfo() {
+    //   return this.$store.getters.userInfo;
+    // }
+  },
+  created() {
+
+  },
+  mounted() {
+    setTimeout(() => {
+      console.log('setUserInfo')
+      this.$store.dispatch('setUserInfo', { a: 'aaaaa' })
+    }, 1000)
+  },
+  methods: {
+
+  },
+}
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

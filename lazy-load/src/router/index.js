@@ -4,7 +4,8 @@ import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
-const routes = [{
+const routes = [
+  {
     path: '/',
     name: 'Home',
     component: Home
@@ -15,26 +16,13 @@ const routes = [{
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import( /* webpackChunkName: "about" */ '../views/About.vue')
-  },
-  {
-    path: '/form',
-    name: 'form',
-    component: () => import('@/views/formPage.vue')
-  },
-  {
-    path: '/display',
-    name: 'display',
-    component: () => import('@/views/display.vue')
-  },
-  {
-    path: '/user',
-    name: 'user',
-    component: () => import('@/views/user.vue')
-  },
+    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+  }
 ]
 
 const router = new VueRouter({
+  // mode: 'history',
+  base: process.env.BASE_URL,
   routes
 })
 
